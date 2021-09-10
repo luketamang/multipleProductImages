@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<div class="container my-5">
+    <h1>Product detail</h1>
+    <br />
+    <hr />
+    <h4>{{productobj.title}}</h4>
+    <br />
+    {% for pimage in productobj.images_set.all %}
+    <img src="{{pimage.images.url}}" class="card-img-top" alt="..." style="width: 200px; height: 200px;">
+    {% empty %}
+    <p>No images yet </p>
+    {% endfor %}
+    
+</div>
+{% endblock %}
